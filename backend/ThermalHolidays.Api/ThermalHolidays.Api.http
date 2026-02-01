@@ -1,0 +1,27 @@
+@ThermalHolidays.Api_HostAddress = http://localhost:5195
+
+### Get Curated Hotels
+GET {{ThermalHolidays.Api_HostAddress}}/api/hotels/
+Accept: application/json
+
+### Get Hotel by Slug
+GET {{ThermalHolidays.Api_HostAddress}}/api/hotels/blue-lagoon-retreat
+Accept: application/json
+
+### Create a Test Booking
+POST {{ThermalHolidays.Api_HostAddress}}/api/bookings?supplierCode=MOCK_SUPPLIER&supplierReference=MOCK-123
+Content-Type: application/json
+
+{
+  "bookingReference": "TH-TEST-001",
+  "hotelId": "b3c7b5a0-d1e4-4c87-ae07-35f9d5f2643f",
+  "checkIn": "2026-06-01",
+  "checkOut": "2026-06-05",
+  "guestDetails": {
+    "mainGuest": "John Doe",
+    "email": "john@example.com"
+  },
+  "totalPrice": 1250.00,
+  "currency": "EUR",
+  "status": "pending"
+}
